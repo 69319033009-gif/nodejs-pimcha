@@ -1,9 +1,12 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const path = require('path');
 
 app.get('/', (req, res) => {
-    res.send('Hello, Node.js server is running! My name is ChatGPT');
+    console.log('path:', path.join(__dirname, 'index.html'));
+    // res.send('Hello, Node.js server is running! My name is ChatGPT');
+    res.sendFile(path.join(__dirname,'webpage', 'index.html'));
 });
 
 app.get('/about', (req, res) => {
